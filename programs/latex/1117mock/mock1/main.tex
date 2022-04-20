@@ -1,0 +1,79 @@
+\documentclass{exam}
+
+\usepackage{lipsum} 
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+    \Large
+    \textbf{The University of Hong Kong}
+        
+    \vspace{0.4cm}
+    \large
+    COMP1117 Computer Programming
+        
+    \vspace{0.4cm}
+    \textbf{Exercise 1 Part B}
+
+    \vspace{0.4cm}
+    \textbf{Time allowed: 45 minutes}
+
+    \vspace{0.4cm}
+    \textbf{Disclaimer and Rules}
+\end{center}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+This paper is not written by any individuals from the Department of Computer Science. You are advised to take this paper as your own reference. Please kindly note that you are suggested to attempt the exercise without debugging. If you do not follow this advice, the author of this paper would be strongly disappointed and would not consider making Exercise 2.}}}
+\end{center}
+\begin{questions}
+		\marksnotpoints
+    \question[10] Write a Python program that reads a line of m letters from keyboard, and then prints all possible strings of length m constructed by these m letters. For example, if the input is:
+    \begin{equation*}
+        a\text{ }b
+    \end{equation*}
+    then the program prints a listing of all string ['aa', 'ab', 'ba', 'bb']. If the input is:
+    \begin{equation*}
+        a\text{ }b\text{ }c
+    \end{equation*}
+    Note: the order of the strings in the returned list is not important.
+    \question[20]
+    We say that an integer h is the greatest common divisor of the pair of integers a and b if h is the largest integer that can divide both a and b. For example, 4 is the greatest common divisor of 20 and 28 because 4 can divide both 20 and 28, and there is no larger integer that can divide both 20 and 28. Write a Python program that reads two positive integers a and b, and then prints the greatest common divisor of a and b.
+    \question[20]
+    Write a Python program that reads a date with the format "mm/dd/yyyy", and then prints the same data with the usual format "Month day, year". For example, if the input is 04/28/2020, then you program should print the line "April 28, 2020".
+\end{questions}
+\end{document}

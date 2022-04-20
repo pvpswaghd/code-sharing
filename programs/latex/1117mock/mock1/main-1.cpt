@@ -1,0 +1,18 @@
+^^E^^L 
+^^I^^I\marksnotpoints
+    \question[3] Write a Python program that reads a line of m letters from keyboard, and then prints all possible strings of length m constructed by these m letters. For example, if the input is:
+    \begin{equation*}
+        a\text{ }b
+    \end{equation*}
+    then the program prints a listing of all string ['aa', 'ab', 'ba', 'bb']. If the input is:
+    \begin{equation*}
+        a\text{ }b\text{ }c
+    \end{equation*}
+    Note: the order of the strings in the returned list is not important.
+    \question[10] How big is the universe?
+    \question[10]
+    Using the previous two answers, compute
+    \[
+        \int_{-\infty}^{\infty} e^{-x^2}\;dx.
+    \]
+^^E^^L 

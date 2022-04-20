@@ -1,0 +1,4 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Semiconductor}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Basic definitions}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Drift}{2}{subsection.1.2}%

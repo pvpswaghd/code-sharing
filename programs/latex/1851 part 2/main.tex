@@ -1,0 +1,511 @@
+\documentclass{article} 
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\title{MATH 1851 Part 2 Ordinary Differential Equations}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{1st order linear ODE}
+\subsection{Seperable Equation}
+ODE could be solved in a seperable equation. Here's an example below.
+$$\frac{dy}{dx} = \frac{6x^5-2x+1}{cosy + e^y}$$
+To find the general equation for this formula, we could put dx on the left side and dy on the right side.
+$$(6x^5-2x+1)dx = (cosy+e^y)dy$$
+We could integrate both signs by adding the integration sign.
+$$\int (6x^5-2x+1) dx = \int (cosy+e^y) dy$$
+To solve the equation, we have
+$$x^6-x^2+x+C = siny+e^y$$
+which it is an implicit form, but the answer is acceptable since we broke down $\frac{dy}{dx}$.
+\subsection{General Formula for 1st order ODE}
+For the 1st order linear ODE, we have a formula to find out the value of y.
+$$\frac{dy}{dx} + P(x)y = Q(x)$$ $$\mu (x) = e^{\int P(x)dx}$$
+There's a more general formula for finding y, but it is better to break down
+into steps.\\First, our $\mu (x)$ can be used to find $\frac{d\mu (x)y}{dx}$.
+We need to multiply both sides by $\mu (x)$ first.
+$$\frac{d\mu (x)y} {dx} = \mu (x)Q(x)$$
+Move the dx to the other side.
+$$d\mu(x)(y) = Q(x)dx$$
+Then, we can integrate both sides.
+$$\int yd\mu (x) = \int \mu (x)Q(x)dx$$
+Therefore,
+$$y\mu (x) = \int \mu (x)Q(x)dx + C$$
+The general formula of 1st order ODE is as follows.
+$$y = \frac {1}{\mu (x)} [\int \mu (x)Q(x)dx + C]$$
+An example is given as below.
+Solve the following first order equations by integrating factors.$$\frac{dy}{dx} - y - e^{3x} = 0$$
+First step is to reorder the numbers and variables to the general form.
+$$\frac{dy}{dx} - y = e^{3x}$$
+We can identify that $P(x) = -1$ and $Q(x) = e^{3x}$.Therefore we can find $\mu (x).$ \\
+Recall $$\mu (x) = e^{\int P(x)dx}$$
+Substitute $P(X) = -1$ into the equation, we have
+$$\mu (x) = e^{\int -1dx}$$
+$$\mu (x) = e^{-x}$$
+Then, we can multiple $e^{-x}$ to both sides of the original equation.
+$$\frac{de^{-x}y}{dx} = e^{-x}{e^{3x}}$$
+Simplifying the equation and moving the terms, we have
+$$de^{-x}y = e^{2x}dx$$
+Integrate both sides of the equation,
+$$\int yde^{-x} = \int e^{2x}dx$$
+$$ye^{-x} = \frac{1}{2}e^{2x} + C$$
+Therefore, the answer for this equation is
+$$y = \frac{1}{2} e^{3x} + Ce^{x}$$
+\subsection{Bernoulli Equation}
+The general form of a Bernoulli Equation is
+$$\frac{dy}{dx} + P(x)y = Q(x)y^n$$
+To solve the equation, we first divide both sides by $y^n$, and let $v = y^{1-n}$.
+Therefore, we have:
+$$\frac{1}{1-n}\frac{dv}{dx} + P(x)v = Q(x)$$
+We can solve the question using integrating factor.
+Here is an example below. Solve the first order equation using Bernoulli Equation with $v = y^{1-n}$.
+$$\frac{dy}{dx} + \frac{y}{x} = a(lnx)y^2$$
+First, we divide both sides by $y^2$ and let $v = y^{-1}$.
+$$-1\frac{dv}{dx} + \frac{1}{x} v = a(lnx)$$
+$$\frac{dv}{dx} - \frac{1}{x} v = -a(lnx)$$
+We have now turn the Bernoulli Equation to the general form of 1st order ODE. Let $\mu (x)$ be our integrating factor.
+$$\mu(x) = e^{\int \frac{-1}{x}dx}$$
+$$\mu(x) = e^{-lnx}$$
+$$\mu(x) = \frac{1}{x}$$
+Multiplying both sides by $\mu(x)$,
+$$\frac{d\frac{1}{x}v}{dx} = \frac{-alnx}{x}$$
+$$d\frac{1}{x}v = \frac{-alnx}{x}dx$$
+Integrate both sides
+$$\int d\frac{1}{x}v = \int \frac{-alnx}{x}dx$$
+Consider $\int \frac{lnx}{x}dx$, we perform integration by parts.\\\\
+Let $u = lnx$, $du = \frac{1}{x}dx$\\\\
+Let $dv = \frac{1}{x}dx$, $v = lnx$
+$$\int \frac{lnx}{x} = (lnx)^2 - \int {\frac{lnx}{x}dx}$$
+$$2\int \frac{lnx}{x} = (lnx)^2$$
+$$\int \frac{lnx}{x} = \frac{(lnx)^2}{2}$$
+Put it into the equation, we have
+$$\frac{1}{x}v = \frac{-a(lnx)^2}{2} + C$$
+$$v = \frac{-ax(lnx)^2}{2} +Cx$$
+As $v = y^{-1} = \frac{1}{y}$, we can conclude that
+$$yx[C+\frac{-a(lnx)^2}{2}] = 1$$
+\subsection{Ricatti Equation}
+If one solution $u(x)$ is known, we can perform the substitution in which
+$y = u + \frac{1}{v}$.
+It will become a first order ODE in v.\\\\
+An example is provided as below. \\\\Given that $u(x) = x$, solve the following first order Ricatti Equation.
+$$\frac{dy}{dx} = x^3(y-x)^2+\frac{y}{x}$$
+First, we let $y = x + \frac{1}{v}$.
+$$\frac{d(x+\frac{1}{v})}{dx} = x^3(x+\frac{1}{v}-x)^2+\frac{x+\frac{1}{v}}{x}$$
+$$\frac{d(x+\frac{1}{v})}{dx} = x^3(\frac{1}{v})^2+1+\frac{1}{vx}$$
+Consider $\frac{d(x+\frac{1}{v})}{dx}$,
+$$\frac{d(x+\frac{1}{v})}{dx} = 1+-v^{-2}\frac{dv}{dx}$$
+Subsitute it to the equation, we have
+$$-v^{-2}\frac{dv}{dx} = x^3(\frac{1}{v})^2+\frac{1}{vx}$$
+$$\frac{dv}{dx} = -x^3-\frac{v}{x}$$
+Reordering the equation, we get the 1st order ODE general form.
+$$\frac{dv}{dx} +\frac{1}{x}v = -x^3$$
+The solution for the above equation is
+$$v = -\frac{1}{5}x^4+\frac{C}{x}$$
+Substitute v into the equation $y = x + \frac {1}{v}$, we have the final answer
+$$y = (-\frac{1}{5}x^4+\frac{C}{x})^{-1}+x$$
+\subsection{Homogeneous Equation}
+The general idea is to let $v = \frac{y}{x}$. Here's an example of solving this type of question.
+\\
+\\
+Question: 
+\begin{equation*}
+	\frac{dy}{dx} = \frac{y}{x} + 3\sqrt{\frac{x}{y}}
+\end{equation*}
+Now, we let $v= \frac{y}{x}$, and we have:
+\begin{equation*}
+	\frac{dvx}{dx} = v + 3\sqrt{v^{-1}}
+\end{equation*}
+Consider $\frac{dvx}{dx}$,
+\begin{equation*}
+	\frac{dvx}{dx} = v + x\frac{dv}{dx}
+\end{equation*}
+Then,
+\begin{equation*}
+	\frac{dv}{dx} = \frac{3\sqrt{v^{-1}}}{x}
+\end{equation*}
+It becomes a seperable equation. Now, we can solve by moving the terms.
+\begin{equation*}
+	\frac{1}{3} \sqrt{v}dv = \frac{1}{x}dx
+\end{equation*}
+Integrating both sides, we have:
+\begin{equation*}
+	\frac{1}{3}\int v^{\frac{1}{2}}dv = \int \frac{1}{x}dx
+\end{equation*}
+After integrating, we have:
+\begin{equation*}
+	\frac{2}{9}v^{\frac{3}{2}} = lnx + C
+\end{equation*}
+Moving the terms and breaking down v, we eventually have:
+\begin{equation*}
+	y^{\frac{3}{2}} = x^{\frac{3}{2}}(\frac{9}{2}lnx + C)
+\end{equation*}
+To simplify and y, we could just multiply the exponential by $\frac{3}{2}$ on both sides.
+\subsection{Exact Equation}
+Now, we dive in the session of exact equation, which introduces a concept called Partial Derivative. Let's use an example to explain.
+\\
+\\
+Question: Use exact equation to solve the following:
+\begin{equation*}
+	(ycosx+cosy+\frac{1}{x})dx + (sinx-xsiny+2y)dy = 0
+\end{equation*}
+Now, let me introduce the general exact equation representation.
+\begin{equation*}
+	M(x)dx + N(x)dy = 0
+\end{equation*}
+The condition is, the derivative of M(x) in respect to y and the derivative of N(x) in respect to x should be equal. \\
+Consider M(x), 
+\begin{equation*}
+	\frac{\partial}{\partial y} (ycosx+cosy+\frac{1}{x}) = cosx-siny
+\end{equation*}
+Notice that cosx, $\frac{1}{x}$ are constants in respect to y. Thus, we do not have to use
+any rules such as power rule and product rule to differentiate those terms.
+\\Consider N(x),
+\begin{equation*}
+	\frac{\partial}{\partial x} (sinx-xsiny+2y) = cosx-siny
+\end{equation*}
+Again, since siny and 2y are constants in respect to x. Thus we do not have to differentiate them.
+Since 
+\begin{equation*}
+	\frac{\partial}{\partial y}M(x) = \frac{\partial}{\partial x} N(x)
+\end{equation*}
+It is an exact equation. Now onto the main dish.
+\begin{equation*}
+	F(x,y) = \int(sinx-xsiny+2y)dy
+\end{equation*}
+We make either M(x) or N(x) to become F(x,y). Choose the one you think it is easy to integrate.\\
+Then, we integrate it and define F(x,y).
+\begin{equation*}
+	F(x,y) = ysinx+xcosy+y^2+h(x)
+\end{equation*}
+Then, we are going to perform partial derivative on F(x,y) opposite to it's original respect. In this case, we will differentiate in respect to x instead of y.
+\begin{equation*}
+	\frac{\partial F(x,y)}{\partial x} = ycosx+cosy+h'(x)
+\end{equation*}
+This equation looks oddly similar right? Check M(x)! Therefore we can derive that $h'(x) = \frac{1}{x}$ and find F(x,y).\\
+The solution to this problem is as below.
+\begin{equation*}
+	C = ysinx+xcosy+y^2+ln(x)
+\end{equation*}
+And that's how you do it.
+\section{2nd order ODE}
+\subsection{Characteristic Equation}
+When we encounter a 2nd order ODE, if the equation matches the following format, we define it as homogeneous.
+\begin{equation*}
+	Ay''+By'+Cy' = 0
+\end{equation*}
+\subsubsection{Case 1: Distinct Real Roots}
+Given the following equation:
+\begin{equation*}
+	y''+5y'+6y=0
+\end{equation*}
+Let $y = e^{rx}$, we have:\\
+\begin{equation*}
+	r^2+5r+6=0
+\end{equation*}
+Solving the equation, we have r = -2 or -3.
+As such, we can use the following formula.
+\begin{equation*}
+	y = C_1e^{r_1x}+C_2e^{r_2x}
+\end{equation*}
+Therefore, the solution is:
+\begin{equation*}
+	y = C_1e^{-2x} + C_2e^{-3x}
+\end{equation*}
+\subsubsection{Case 2: Repeated Real Roots}
+Given the following equation:
+\begin{equation*}
+	y''+6y'+9y=0
+\end{equation*}
+Let $y = e^{rx}$, we have:\\
+\begin{equation*}
+	r^2+6r+9=0
+\end{equation*}
+Solving the equation, we have r = -3 (repeated). Therefore, we can use the following formula as our equation.
+\begin{equation*}
+	y = C_1e^{rx}+C_2xe^{rx}
+\end{equation*}
+Therefore, as r = -3 in our case, we have:
+\begin{equation*}
+	y = C_1e^{-3x}+C_2xe^{-3x}
+\end{equation*}
+\subsubsection{Case 3: Complex Conjugate Roots}
+Given the following equation:
+\begin{equation*}
+	y''+2y'+17y=0
+\end{equation*}
+Let $r = e^{rx}$, we have:
+\begin{equation*}
+	r^2+2r+17=0
+\end{equation*}
+We can use the quadratic formula of $\frac{-b\pm \sqrt{b^2-4ac}} {2a}$ to find the roots. Hence, the solution is $-1\pm4i$
+.\\
+The formula above suggest the solution of y.
+\begin{equation*}
+	y = e^{\alpha x}(C_1cos(\beta x) + C_2sin(\beta x))
+\end{equation*}
+In this case, we have
+\begin{equation*}
+	y = C_1e^{-x}cos(4x) + C_2e^{-x}sin(4x)
+\end{equation*}
+\subsection{Non-homogeneous Equation}
+The above we discussed about 2nd order homogeneous equation. Usually, the form of non-homogeneous equation is as below.
+\begin{equation*}
+	Ay''+By'+Cy'=G(x)
+\end{equation*}
+The solution for non-homogeneous equation contains both complementary solution and particular solution such that:
+\begin{equation*}
+	y = y_p(x) + y_c(x)
+\end{equation*}
+In all the following cases, we will define $y_p(x)$ as our particular solution, and $y_c(x)$ to be our complementary solution.
+Below, we will discuss three cases for non-homogeneous equations and the respective methods to answer them.
+\subsubsection{Case 1: Polynomials}
+Given the equation below:
+\begin{equation*}
+	\frac{d^2y}{dx^2} - 8\frac{dy}{dx} + 16y = x
+\end{equation*}
+We consider the complementary solution of the above equation.
+\begin{equation*}
+	r^2-8r+16=0
+\end{equation*}
+which r = 4 (repeated), so we have:
+\begin{equation*}
+	y = C_1e^{4x} + C_2xe^{4x}
+\end{equation*}
+Then we consider the particular solution.
+\begin{equation*}
+	y_p(x) = A_1x+A_0
+\end{equation*}
+\begin{equation*}
+	y_p'(x) = A_1
+\end{equation*}
+\begin{equation*}
+	y_p''(x) = 0
+\end{equation*}
+Then by substituting the above into the equation, we have:
+\begin{equation*}
+	-8(A_1)+16A_1x+16A_0 = x
+\end{equation*}
+Using the method of Undetermined Coefficients, we have:
+\begin{equation}
+	-8(A_1)+16A_0 = 0
+\end{equation}
+\begin{equation}
+	16A_1x = 1
+\end{equation}
+\subsubsection{Case 2: Exponential}
+Given the equation below:
+\begin{equation*}
+	\frac{d^2y}{dx^2} - 7\frac{dy}{dx} + 10y = e^{3x}
+\end{equation*}
+\subsubsection{Case 3: Trigonometric Functions}
+Given the equation below:
+\begin{equation*}
+	\frac{d^2y}{dx^2} - 2\frac{dy}{dx} + 10y = sin3x
+\end{equation*}
+\subsubsection{Mixed Cases Problems}
+\subsection{Cauchy-Euler Equaiton}
+In this session, we will only focus on second-order homogeneous Cauchy-Euler Equations.
+Given a 2nd-order ordinary differential equation,
+\begin{equation*}
+	ax^2y''+bxy'+cy=0
+\end{equation*}
+We can rewrite it as below, using the equation:
+\begin{equation*}
+	ar^2+(-a+b)r+c = 0
+\end{equation*}
+First, to find out why it would turn it like this, we have do find let $y =x^r$.
+\begin{equation*}
+	y' = rx^{r-1}
+\end{equation*}
+\begin{equation*}
+	y''= r(r-1)x^{r-2}
+\end{equation*}
+\subsubsection{Case 1: Distinct real roots}
+If the roots of the equation are distinct, then we can use the following equation as our solution.
+\begin{equation*}
+	y = C_1x^{r_1}+C_2x^{r_2}
+\end{equation*}
+An example is as belows. Given the 2nd-order differential equation:
+\begin{equation*}
+	x^2y''-9xy'+16y=0
+\end{equation*}
+We can turn into the Cauchy-Euler equation form by identifying a, b, c. In this case, we know that a = 1, b = -9, c = 16.
+\begin{equation*}
+	r^2-10r+16=0
+\end{equation*}
+From the above quadratic equation, we know that r = 8 or 2. Therefore, the solution for y is obviously:
+\begin{equation*}
+	y = C_1x^8+C_2x^2
+\end{equation*}
+\subsubsection{Case 2: Repeated Roots}
+If the roots of the equation are repeated, then we can use the following equation as our solution.
+\begin{equation*}
+	y = C_1x^{r}+C_2x^rlnx
+\end{equation*}
+An example is as below. Given the 2nd-order differential equation:
+\begin{equation*}
+	x^2y''-5xy'+9y = 0
+\end{equation*}
+We can turn into the Cauchy-Euler equation form by identifying a,b,c. In this case, we know that a = 1, b = -5, c = 9.
+\begin{equation*}
+	r^2-6r+9=0
+\end{equation*}
+From the above quadratic equation, we know that r = 3 (repeated). Therefore, the solution for y is obviously:
+\begin{equation*}
+	y = C_1x^3+C_2x^3lnx
+\end{equation*}
+\subsubsection{Case 3: Complex Conjugate Roots}
+If the roots of the equation could be written in complex form, then we can use the following equation as our solution.
+\begin{equation*}
+y = C_1x^{\alpha}cos(\beta lnx)+C_2x^{\alpha}sin(\beta lnx)
+\end{equation*}
+An example is as below. Given the 2nd-order differential equation:
+\begin{equation*}
+	x^2y''-5xy'+10y=0
+\end{equation*}
+We can turn into the Cauchy-Euler equation form by identifying a,b,c. In this case, we know that a = 1, b = -5, c = 10.
+\begin{equation*}
+	r^2-6r+10=0
+\end{equation*}
+Solving the equation with quadratic formula, we have $r = 3 \pm 2i$. Obvious, the solution for y is:
+\begin{equation*}
+	y = C_1x^3cos(2lnx) + C_2x^3sin(2lnx)
+\end{equation*}
+\subsection{Variation of Parameters}
+\subsection{D-operator (Optional)}
+D-operator method is essentially another way of doing 2nd order linear non-homogeneous (or it could solve homogeneous equations too). First of all, given the following equation:
+\begin{equation*}
+	y''+y'-2y = 4xe^x
+\end{equation*}
+We first solve this as an ordinary non-homogeneous equation. Let $y = e^{rx}$,
+we can find that r = -2 or 1.
+\begin{equation*}
+y_c = C_1e^{-2x} + C_2xe^x
+\end{equation*}
+We let $D = \frac{d}{dx}$, then $y' = Dy$, $y'' = D^2y$.
+\begin{equation*}
+	(D^2+D-2)y = 4xe^x
+\end{equation*}
+Then, we let $f = 4xe^x$. Essentially we wanted to find some equation that's equal to 0. Here's a more detailed operation.
+\begin{equation*}
+	f = 4xe^x
+\end{equation*}
+\begin{equation*}
+	Df = 4e^x + 4xe^x
+\end{equation*}
+\begin{equation*}
+	D^2f = 8e^x + 4xe^x
+\end{equation*}
+Since we observe that if we multiply Df by 2, and minus f, it would be equal to $D^2f$. Hence,
+\begin{equation*}
+	D^2f - 2Df - f = 0
+\end{equation*}
+Pulling out common factors, we have
+\begin{equation*}
+	(D^2-2D-1)f = 0
+\end{equation*}
+Now, go back to the original equation. We can multiply both sides by $D^2-2D-1$.
+\begin{equation*}
+	(D^2+D-2)(D^2-2D-1)y = (D^2-2D-1)f = 0
+\end{equation*}
+Then, we could just write our equation for $y_p$, and use the method of undetermined coefficient and finish the rest.
+Since the roots of $D^2-2D-1$ is repeated (-1), therefore we know that we have to give an extra degree to the equation such as:
+\begin{equation*}
+	y_p = Axe^x + Bx^2e^x
+\end{equation*}
+\section{Laplace Transform}
+The equation of Laplace Transform is as below.
+\begin{equation*}
+	\mathcal{L}\{f(t)\} = \int_{0}^{\infty }e^{-st}f(t)dt
+\end{equation*}
+For any types for f(t), we could derive it's form of Laplace Transform using the above integral. However, there's some common types of Laplace Transform provided during the exam. They are:
+\begin{equation*}
+	\mathcal{L}\{1\} = \frac{1}{s}
+\end{equation*}
+\begin{equation*}
+	\mathcal{L}\{e^{at}\} = \frac{1}{s-a}
+\end{equation*}
+\begin{equation*}
+	\mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}}
+\end{equation*}
+\begin{equation*}
+	\mathcal{L}\{\sin {at}\} = \frac {a} {s^2 + a^2}
+\end{equation*}
+\begin{equation*}
+	\mathcal{L}\{\cos {at}\} = \frac {s} {s^2 + a^2}
+\end{equation*}
+\subsection{Relation between derivatives and laplace transform}
+For the first derivative,
+\begin{equation*}
+	\mathcal{L}\{f'(x)\} = s\mathcal{L}\{f(x)\} - f(0)
+\end{equation*}
+For the second derivative,
+\begin{align*} 
+	\mathcal{L}\{f''(x)\} &= s\mathcal{L}\{f'(x)\} - f'(0)\\
+											 &= s(s\mathcal{L}\{f(x)\} - f(0)) - f'(0)\\
+											 &= s^2\mathcal{L}\{f(x)\} - sf(0) - f'(0)
+\end{align*}
+An example is demonstrated below. (Credit: Khan Academy)
+\begin{equation*}
+	y''+5y'+6y=0\text{, }
+	y(0) = 2\text{, }
+	y'(0) = 3
+\end{equation*}
+We can perform Laplace Transform on both sides. Note that $\mathcal{L}\{0\} = 0$.
+\begin{equation*}
+	\mathcal{L}\{y''\} + 5\mathcal\{y'\} + 6\mathcal\{y\} = 0	
+\end{equation*}
+We can use the relation stated above.
+\begin{equation*}
+	s\mathcal{L}\{y'\} - y'(0) + 5[s\mathcal{L}\{y\} - y(0)] + 6\mathcal{L}\{y\} = 0
+\end{equation*}
+\begin{equation*}
+	s[s\mathcal{L}\{y\} - y(0)] - y'(0) + 5[s\mathcal{L}\{y\} - y(0)] + 6\mathcal{L}\{y\}= 0
+\end{equation*}
+Grouping terms, we have
+\begin{equation*}
+	s^2\mathcal{L}\{y\} - s*y(0) - y'(0) + 5s\mathcal{L}\{y\} - 5y(0) + 6\mathcal{L}\{y\} = 0
+\end{equation*}
+\begin{equation*}
+	\mathcal{L}\{y\}(s^2+5s+6)-2s-5(2)-3 = 0
+\end{equation*}
+\begin{equation*}
+	\mathcal{L}\{y\}(s^2+5s+6) = 2s+13
+\end{equation*}
+We can come up that for the laplace transform of y,
+\begin{equation*}
+	\mathcal{L}\{y\}=\frac{2s+13}{s^2+5s+6}
+\end{equation*}
+Perform partial fraction (We won't include it here), we have
+\begin{equation*}
+	\mathcal{L}\{y\} = 9\frac{1}{s+2} - 7\frac{1}{s+3}
+\end{equation*}
+Recall $\mathcal{L}\{e^{at}\} = \frac{1}{s-a}$,
+\begin{equation*}
+	\mathcal{L}\{y\} = 9\mathcal{L}{e^{-2t}} - 7\mathcal{L}{e^{-3t}}
+\end{equation*}
+Using the linear property of laplace transform, we have
+\begin{equation*}
+	\mathcal{L}\{y\} = \mathcal{L}\{9e^{-2t}-7e^{-3t}\}
+\end{equation*}
+Therefore, we come up the solution of y.
+\begin{equation*}
+	y = 9e^{-2t}-7e^{-3t}
+\end{equation*}
+\subsection{Shifting Properties of Laplace Transform}
+It is said that
+\begin{equation*}
+	\mathcal{L}\{e^{at}f(t)\} = F(s-a)
+\end{equation*}
+One quick example to demonstrate this property:
+\begin{equation*}
+	\mathcal{L}\{e^{3t}sin2t\} = \frac{2}{(3-2)+4}
+\end{equation*}
+We substitute s-a into the original function of s.
+\end{document}

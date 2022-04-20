@@ -1,0 +1,48 @@
+\documentclass{article} 
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{comment}
+\pgfplotsset{width=10cm, compat=1.18}
+\title{1310 Formula list 1.0}
+\author{Victor Chui}
+\begin{document}
+\maketitle
+\tableofcontents
+\pagebreak
+\section{Semiconductor}
+\subsection{Basic definitions}
+To find the density of electrons in a material, we have
+\begin{equation*}
+	n_i = 5.2*10^{15}T^{\frac{3}{2}}exp\frac{-E_g}{2kT}\text{ electrons/}cm^3
+\end{equation*}
+In both intrinsic and extrinsic conductors, the electron density and hole density is equal. Thus:
+\begin{equation*}
+	np = n_i^2
+\end{equation*}
+where $n_i$ is the densities of intrinsic material.\\\\
+For a p-type semiconductor, holes are the majority carrier and electrons are the minority carrier. Thus,
+\begin{equation*}
+	\text{Majority Carriers: } n \approx N_D \text{ which }N_D\text{ is the density of donor atoms}
+\end{equation*}
+\begin{equation*}
+	\text{Minority Carriers: } p \approx \frac{n_i^2}{N_D}
+\end{equation*}
+Similarly, for a density of $N_A$ acceptor atoms per cubic centimeter, we have:
+\begin{equation*}
+	\text{Majority Carriers: } p \approx N_A 
+\end{equation*}
+\begin{equation*}
+	\text{Minority Carriers: } n \approx \frac{n_i^2}{N_A}
+\end{equation*}
+\subsection{Drift}
+
+\end{document}
