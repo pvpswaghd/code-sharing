@@ -1,56 +1,35 @@
 #include <iostream>
-#include <cstdlib>
-#include <string>
+#include <chrono>
+#include <ctime>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
+int main(){
 
-struct Car {
-	string id;
-	Car *next;
-};
-
-void appendCar(Car *&head, Car*&tail, string id);
-void printTrain(Car *&head);
-
-int main() {
-	Car *head = NULL;
-  Car *tail = NULL;
-	int n;
-	cin >> n;
-	string id;
-	for (int i = 0; i < n; i++) {
-		cin >> id;
-		appendCar(head, tail, id);
-	}
-	printTrain(head);
-
-	return 0;
-}
-
-// Please implement the function appendCar() here.
-void appendCar(Car *&head, Car *&tail, string id) {
-    Car *p = new Car;
-    p->id = id;
-    p->next = NULL;
-    if(head == NULL){
-        head = p;
-        tail = p;
-    }
-    else{
-        tail->next = p;
-        tail = p;
-    }
-}
-
-void printTrain(Car *&head) {
-	Car *current = head;
-	while (current != NULL) {
-		if (current->next != NULL) {
-			cout << current->id << ", ";
+	// create chrono start time
+	for (int i = 0; i <= 5; i++) {
+		auto startTime = std::chrono::system_clock::now();
+	
+		//Some more functions which are not important
+	
+		// get elapsed time
+		auto elapsedTime = std::chrono::system_clock::now();
+		std::chrono::duration<double> elapsed_seconds = elapsedTime - startTime;
+	
+		// check if duration expires
+		auto numSeconds = elapsed_seconds.count();
+		float tMax = 3.5;
+		while (numSeconds < tMax)
+		{
+	    	// Do different functions
+	    	// check again
+	    	elapsedTime = std::chrono::system_clock::now();
+	    	elapsed_seconds = elapsedTime - startTime;
+	    	numSeconds = elapsed_seconds.count();
+				cout << numSeconds << endl;
 		}
-		else {
-			cout << current->id;
-		}
-		current = current->next;
-	}
-}
+ 	}	
+}	

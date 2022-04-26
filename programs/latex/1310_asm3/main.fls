@@ -1,0 +1,49 @@
+PWD /Users/victorc3/Desktop/code-sharing/programs/latex/1310_asm3
+INPUT /Users/victorc3/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/xetex/xelatex.fmt
+INPUT main.tex
+OUTPUT main.log
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
+INPUT extractbb --version
+INPUT ./main.aux
+INPUT main.aux
+INPUT main.aux
+OUTPUT main.aux
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ts1cmr.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ts1cmr.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ts1cmr.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ts1cmr.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr12.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr8.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr6.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy6.tfm
+INPUT main.aux
