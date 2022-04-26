@@ -1,18 +1,3 @@
-def addFile():
-    line = []
-    for i in range(len(temp)):
-        string = ""
-        for j in range(len(temp[i])):
-            string += temp[i][j][0].upper()
-            for k in range(1, len(temp[i][j])):
-                string += temp[i][j][k].lower()
-            if j+1 != len(temp[i]):
-                string += " "
-        if string.lower() == "hku":
-            line.append(string.upper())
-        else:
-            line.append(string)
-    return line
 curr_input = str(input())
 temp = []
 while curr_input != "-1":
