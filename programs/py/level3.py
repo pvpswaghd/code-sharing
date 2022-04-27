@@ -49,34 +49,36 @@ def find_connection(lapped, start, destination, line1, line2):
         for i in lapped:
             print(i)
         print(f"to use the {line1[0]} line for your destination")
-file = str(input())
-if file[-4::] != '.txt':
-    file += '.txt'
-f = open(file, "r")
-temp = []
-line1 = []
-line2 = []
-for i in f:
-    temp.append(i.split())
-line1 = addFile()
-file = str(input())
-if file[-4::] != '.txt':
-    file += '.txt'
-f = open(file, "r")
-temp = []
-for i in f:
-    temp.append(i.split())
-line2 = addFile()
-lapped = overlapping(line1, line2)
-start = str(input())
-start = capitalize(start)
-destination = str(input())
-destination = capitalize(destination)
-if start not in line1 and start not in line2 or destination not in line1 and destination not in line2:
-    print("Station not found")
-elif start in line1 and destination in line1:
-    print(f"To get from {start} to {destination} take the {line1[0]} line")
-elif start in line2 and destination in line2:
-    print(f"To get from {start} to {destination} take the {line2[0]} line")
-else:
-    find_connection(lapped, start, destination, line1, line2)
+def getInfo():
+    file = str(input())
+    if file[-4::] != '.txt':
+        file += '.txt'
+    f = open(file, "r")
+    temp = []
+    line1 = []
+    line2 = []
+    for i in f:
+        temp.append(i.split())
+    line1 = addFile()
+    file = str(input())
+    if file[-4::] != '.txt':
+        file += '.txt'
+    f = open(file, "r")
+    temp = []
+    for i in f:
+        temp.append(i.split())
+    line2 = addFile()
+    lapped = overlapping(line1, line2)
+    start = str(input())
+    start = capitalize(start)
+    destination = str(input())
+    destination = capitalize(destination)
+    if start not in line1 and start not in line2 or destination not in line1 and destination not in line2:
+        print("Station not found")
+    elif start in line1 and destination in line1:
+        print(f"To get from {start} to {destination} take the {line1[0]} line")
+    elif start in line2 and destination in line2:
+        print(f"To get from {start} to {destination} take the {line2[0]} line")
+    else:
+        find_connection(lapped, start, destination, line1, line2)
+getInfo()

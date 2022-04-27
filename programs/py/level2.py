@@ -26,44 +26,44 @@ def addFile():
         else:
             line.append(string)
     return line
-
-file = str(input())
-if file[-4::] != '.txt':
-    file += '.txt'
-f = open(file, "r")
-temp = []
-line1 = []
-line2 = []
-for i in f:
-    temp.append(i.split())
-line1 = addFile()
-file = str(input())
-if file[-4::] != '.txt':
-    file += '.txt'
-f = open(file, "r")
-temp = []
-for i in f:
-    temp.append(i.split())
-line2 = addFile()
-key = str(input())
-key = capitalize(key)
-finalList = []
-for i in range(len(line1)):
-    if key == line1[i]:
-        finalList.append(line1[0])
-        break
-for i in range(len(line2)):
-    if key == line2[i]:
-        finalList.append(line2[0])
-        break
-if finalList:
-    print(f"{key} Station found\nLine(s): ", end="")
-    for i in range(0, len(finalList)-1):
-        print(f"{finalList[i]}, ", end="")
-    print(f"{finalList[-1]}", end="")
-else:
-    print("Station not found")
-
+def getInfo():
+    file = str(input())
+    if file[-4::] != '.txt':
+        file += '.txt'
+    f = open(file, "r")
+    temp = []
+    line1 = []
+    line2 = []
+    for i in f:
+        temp.append(i.split())
+    line1 = addFile()
+    file = str(input())
+    if file[-4::] != '.txt':
+        file += '.txt'
+    f = open(file, "r")
+    temp = []
+    for i in f:
+        temp.append(i.split())
+    line2 = addFile()
+    key = str(input())
+    key = capitalize(key)
+    finalList = []
+    for i in range(len(line1)):
+        if key == line1[i]:
+            finalList.append(line1[0])
+            break
+    for i in range(len(line2)):
+        if key == line2[i]:
+            finalList.append(line2[0])
+            break
+    if finalList:
+        print(f"{key} Station found\nLine(s): ", end="")
+        for i in range(0, len(finalList)-1):
+            print(f"{finalList[i]}, ", end="")
+        print(f"{finalList[-1]}", end="")
+    else:
+        print("Station not found")
+getInfo()
 
 
 
