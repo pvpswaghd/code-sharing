@@ -1,0 +1,116 @@
+\documentclass{exam} 
+
+\usepackage[english]{babel}
+\usepackage{polynom}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{blindtext}
+\pgfplotsset{width=10cm, compat=1.18}
+\begin{document}
+\begin{multicols}{2}
+[
+\section{Differentiation}
+]
+\noindent
+$\frac{d}{dx}\sin x = \cos x$ \\\\
+$\frac{d}{dx}\cos x = -\sin x$ \\\\
+$\frac{d}{dx}\tan x = \sec ^2x$ \\\\
+$\frac{d}{dx}\sec x = \sec x\tan x$ \\\\
+$\frac{d}{dx}\csc x = -\csc x\cot x$ \\\\
+$\frac{d}{dx}\cot x = -\csc ^2x$ \\
+\end{multicols}
+\begin{multicols}{2}
+[
+\section{Formulas}
+]
+$\sin 2x = $\\\\
+$\cos 2x = $\\\\
+$\sin ^2x + \cos^2x = 1$\\\\
+Pythagorean Identity (tan): $\tan^2 x + 1 = \sec^2 x$\\\\
+Pythagorean Identity (cot): $\sec^2 x - 1 = \tan^2 x$\\\\
+\end{multicols}
+\begin{multicols}{2}
+[\section {Theorem}]
+Fundamental Theorem of Calculus (Part 1):\\ If f is continuous at [a,b], then $\int_a^x f(t)dt$ is continuous on [a,b] and differentiable at (a,b), and the derivative is \\$F'(x) = \frac{d}{dx} \int_a^x f(t)dt = f(x)$ \\\\
+Mean Value Theorem:\\
+If f is continous at [a,b],
+differentiable at (a,b), 
+then there must be a $c \in (a,b)$ which\\
+$f'(c) = \frac{f(b)-f(a)}{b-a}$\\\\
+Intermediate Value Theorem: \\
+If f is proved continuous as [a,b], then let M be a number which lies between f(a) and f(b), there will be a number c $\in$ [a,b] such that $f(c) = M$. \\\\\\
+\end{multicols}
+\begin{multicols}{2}
+[
+\section{Laplace Transform}
+]
+$\frac{1}{(s-a)(s-b)} = \frac{A}{s-a} + \frac{B}{s-b}$ \\\\\\
+$\frac{1}{(s-a)^3} = \frac{A}{s-a} + \frac{B}{(s-a)^2} + \frac{C}{(s-a)^3}$ \\\\\\
+$\frac{1}{(s-a)^2+b^2} = \frac{A(s-a)}{(s-a)^2+b^2} + \frac{B(b)}{(s-a)^2+b^2}$ \\\\\\
+Convolution: $f * g = \int_0^t f(u)g(t-u)du$\\\\\\
+First shift: \\\\\\
+Second shift: \\\\
+\end{multicols}
+\newpage
+\begin{multicols}{2}
+[
+\section{Areas}
+]
+Polar Equation: $r = \sin\theta$\\\\\\
+Area of Polar Equation: $A = \int_a^b \frac{1}{2}r^2d\theta$\\\\
+Volume of Solid: \\\\\\
+\end{multicols}
+\section{ODE}
+\begin{questions}
+\question Solve the following ODE using D-operator. 
+\begin{equation*}
+	y''+2y'+y=e^{-x}
+\end{equation*}
+Solution:\\
+Let $y = e^{rx},$\\
+\begin{align*}
+	r^2+2r+1&=0\\
+	(r+1)^2&=0
+\end{align*}
+Therefore,
+\begin{equation*}
+	y = C_1e^{-x}+C_2xe^{-x}
+\end{equation*}
+Write $D = \frac{d}{dx}$:
+\begin{align*}
+	D^2y+2Dy+y &=e^{-x} \\
+	(D^2+2D+1)y &= e^{-x} 
+\end{align*}
+Let $f = e^{-x}$.
+\begin{align*}
+	Df &= -e^{-x} \\
+	D^2f &= e^{-x} \\
+	D^2f - f &= 0 \\
+	(D^2 - 1)f &= 0
+\end{align*}
+Back to the equation,
+\begin{align*}
+	(D^2+2D+1)(D^2-1)y &= 0 \\
+	(D+1)^2(D+1)(D-1)y &= 0
+\end{align*}
+\question Solve the following Cauchy-Euler equation:
+\begin{equation*}
+	x^2y''+3xy'+6y=0
+\end{equation*}
+\question Find the Laplace Transform of
+\begin{equation*}
+	t\sin bt
+\end{equation*}
+\end{questions}
+\end{document}
+

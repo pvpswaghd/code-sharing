@@ -1,0 +1,83 @@
+\documentclass{exam} 
+
+\usepackage[english]{babel}
+\usepackage{polynom}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{blindtext}
+\pgfplotsset{width=10cm, compat=1.18}
+\begin{document}
+\begin{multicols}{2}
+[
+\section{Differentiation}
+]
+\noindent
+$\frac{d}{dx}\sin x = $ \\\\
+$\frac{d}{dx}\cos x = $ \\\\
+$\frac{d}{dx}\tan x = $ \\\\
+$\frac{d}{dx}\sec x = $ \\\\
+$\frac{d}{dx}\csc x = $ \\\\
+$\frac{d}{dx}\cot x = $ \\
+\end{multicols}
+\begin{multicols}{2}
+[
+\section{Formulas}
+]
+$\sin 2x = $\\\\
+$\cos 2x = $\\\\
+$\sin ^2x + \cos^2x =$\\\\
+Pythagorean Identity (tan): \\\\
+Pythagorean Identity (cot): \\\\
+\end{multicols}
+\begin{multicols}{2}
+[\section {Theorem}]
+Fundamental Theorem of Calculus:\\\\\\\\
+Mean Value Theorem:\\\\
+Intermediate Value Theorem: \\\\\\\\
+\end{multicols}
+\begin{multicols}{2}
+[
+\section{Laplace Transform}
+]
+$\frac{1}{(s-a)(s-b)}$: \\\\\\
+$\frac{1}{(s-a)^3}$: \\\\\\
+$\frac{1}{(s-a)^2+b^2}$: \\\\\\
+Convolution: \\\\\\
+First shift: \\\\\\
+Second shift: \\\\
+\end{multicols}
+\begin{multicols}{2}
+[
+\section{Areas}
+]
+Polar Equation: \\\\\\
+Area of Polar Equation: \\\\
+Volume of Solid: \\\\\\
+\end{multicols}
+\newpage
+\section{ODE}
+\begin{questions}
+\question Solve the following ODE using D-operator. 
+\begin{equation*}
+	y''+2y'+y=e^{-x}
+\end{equation*}
+\question Solve the following Cauchy-Euler equation:
+\begin{equation*}
+	x^2y''+3xy'+6y=0
+\end{equation*}
+\question Find the Laplace Transform of
+\begin{equation*}
+	t\sin bt
+\end{equation*}
+\end{questions}
+\end{document}
