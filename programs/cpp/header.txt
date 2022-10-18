@@ -1,0 +1,4 @@
+If problem persists on bits/stdc++.h header file,
+
+
+cd /Library/Developer/CommandLineTools/usr/include/bits/stdc++.h

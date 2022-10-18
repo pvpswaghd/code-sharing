@@ -1,5 +1,5 @@
-PWD /Users/victorc3/Desktop/code-sharing/programs/latex/1310_asm3
-INPUT /Users/victorc3/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/xetex/xelatex.fmt
+PWD /Users/pvpswaghd/Desktop/code-sharing/programs/latex/1310_asm3
+INPUT /Users/pvpswaghd/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/xetex/xelatex.fmt
 INPUT main.tex
 OUTPUT main.log
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
@@ -28,7 +28,6 @@ INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3b
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-xetex.def
-INPUT extractbb --version
 INPUT ./main.aux
 INPUT main.aux
 INPUT main.aux
