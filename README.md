@@ -22,4 +22,4 @@ In the following, there are my projects and codes that I wrote for studying. It 
 The following is only applicable to MacOS. [Yabai](https://github.com/koekeishiya/yabai) and Karabiner Elements are used for enhance the workflow of navigating through desktops.
 
 1. [Yabai / skhd](https://github.com/pvpswaghd/code-sharing/tree/main/programs/skhd)
-2. [Karabiner Elements)(https://github.com/pvpswaghd/code-sharing/tree/main/programs/karabiner)
+2. [Karabiner Elements](https://github.com/pvpswaghd/code-sharing/tree/main/programs/karabiner)
