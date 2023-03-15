@@ -1,0 +1,220 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int size = 0;
+int kth = 0;
+
+struct TreeNode { //from the slides
+    int value;
+    int height;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int value){
+        this->value = value;
+        left = right = 0;
+    }
+};
+
+void inorder(TreeNode *root) {
+  if (root != NULL) {
+    // Traverse left
+    inorder(root->left);
+
+    // Traverse root
+    cout << root->value << " -> ";
+
+    // Traverse right
+    inorder(root->right);
+  }
+}
+
+TreeNode* leftRotate(TreeNode* r){
+    TreeNode *x = r->right;
+    TreeNode *y = x->left;
+
+    x->left = r;
+    r->right = y;
+
+    return x;
+}
+
+TreeNode* rightRotate(TreeNode* r){
+    TreeNode *x = r->left;
+    TreeNode *y = x->right;
+
+    x->right = r;
+    r->left = y;
+    
+    return x;
+}
+
+
+int height(TreeNode *r){
+    if (r == 0) //default case for a empty node
+        return -1;
+    else {
+        int lh = height(r->left);
+        int rh = height(r->right);
+        return (max(lh, rh) + 1);
+    } 
+}
+
+int getBF (TreeNode* r){
+    return (r == 0) ? -1 : (height(r->left) - height(r->right));
+}
+
+void insert(TreeNode *&r, int value){
+    if (r == 0){
+        r = new TreeNode(value);
+        return;
+    }
+
+    if (value > r->value){
+        insert(r->right, value);
+    }
+
+    else if (value < r->value){
+        insert(r->left, value);
+    }
+
+    int bf = getBF(r);
+
+    if(bf < -1){
+        bf = getBF(r->right);
+        if(bf > 1){
+            r->right = rightRotate(r->right);
+        }
+        r = leftRotate(r);
+    }
+
+    else if(bf > 1){
+        bf = getBF(r->left);
+        if (bf < -1){
+            r->left = leftRotate(r->left); 
+        }
+        r = rightRotate(r);
+    }
+    
+    /*
+    if (bf > 1 && newNode->value < r->left->value) //LL imbalance
+        return rightRotate(r);
+
+    if (bf < -1 && newNode->value > r->right->value) //RR imbalance
+        return leftRotate(r);
+
+    if (bf > 1 && newNode->value > r->left->value){
+        r->left = leftRotate(r->left);
+        return rightRotate(r);
+    } //LR imbalance
+    
+    if (bf < -1 && newNode->value < r->right->value){
+        r->right = rightRotate(r->right);
+        return leftRotate(r);
+    } //RR imbalance
+    */
+
+}
+
+TreeNode* deleteNode(TreeNode *r, int value){
+    if (r == 0) {
+        return NULL;
+    }
+
+    else if (value < r->value){
+        r->left = deleteNode(r->left, value);
+    }
+
+    else if (value > r->value){
+        r->right = deleteNode(r->right, value);
+    }
+
+    else{
+        if (!(r->left && r->right)){
+            TreeNode *remainingRoot = (r->right) ? r->right : r->left;
+            delete r;
+            r = remainingRoot;
+        }
+        else{
+            TreeNode *rightR = r->right;
+            while(rightR->left){
+                rightR = rightR->left;
+            }
+            swap(r->value, rightR->value);
+            r->right = deleteNode(r->right, value);
+        }
+    }
+    
+    int bf = getBF(r);
+
+    if(bf < -1){
+        bf = getBF(r->right);
+        if(bf > 1){
+            r->right = rightRotate(r->right);
+        }
+        r = leftRotate(r);
+    }
+
+    else if(bf > 1){
+        bf = getBF(r->left);
+        if (bf < -1){
+            r->left = leftRotate(r->left); 
+        }
+        r = rightRotate(r);
+    }
+    return r;
+}
+
+void findMin(TreeNode* r, int k, int& count){
+    /*
+    if (k < 1 || k > r->size || r == 0){
+        cout << "root " << r->size << ", " << k << endl;
+    }
+    */
+    if (r == NULL)
+        return;
+    findMin(r->left, k, count);
+    count++;
+    if (count == k)
+        kth = r->value;  
+    else
+        findMin(r->right, k, count);
+    
+}
+
+int main(){
+    TreeNode *root = 0;        
+    char input[10];
+    int value;
+    bool flag = true;
+    while(flag){
+        scanf("%s", input);
+        if(input[0] == 'E' && input[1] == 'N' && input[2] == 'D') {
+            flag = false;
+            break;
+        }
+        switch(input[0]){
+            case 'A':
+                cin >> value;
+                insert(root, value);
+                //inorder(root);
+                //cout << endl << "Root now is: " << root->value << endl;
+                break;
+            case 'D':
+                cin >> value;
+                root = deleteNode(root, value);
+                break;
+            case 'M':
+                cin >> value;
+                int count = 0;
+                findMin(root, value, count);
+                cout << kth << endl;
+                break;  
+
+
+        }
+    }
+
+}
+

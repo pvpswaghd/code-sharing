@@ -1,0 +1,31 @@
+\documentclass{article} 
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\title{COMP2121 Assignment 1}
+
+\begin{document}
+\maketitle
+
+hello
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+A & B & C & $\neg A$ & $\neg B$ & $A \implies C$ & $B \implies C$ & not (A-\textgreater{}C) & not (B-\textgreater{}C) & not A and not B & All combined \\ \hline
+T & T & T & F & F & T & T & F & F & F & F \\ \hline
+T & F & T & F & T & T & T & F & F & F & F \\ \hline
+T & F & F & F & F & F & T & T & F & F & T \\ \hline
+T & T & F & F & T & F & F & T & T & F & T \\ \hline
+F & T & T & T & F & T & T & F & F & F & F \\ \hline
+F & F & T & T & T & T & T & F & F & T & T \\ \hline
+F & T & F & T & F & T & F & F & T & F & T \\ \hline
+F & F & F & T & T & T & T & F & F & T & T \\ \hline
+\end{tabular}
+\end{table}
+\end{document}
