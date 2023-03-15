@@ -13,7 +13,7 @@ In the following, there are my projects and codes that I wrote for studying. It 
 
 1. [C++](https://github.com/pvpswaghd/code-sharing/tree/main/programs/cpp)
 2. [Python](https://github.com/pvpswaghd/code-sharing/tree/main/programs/py)
-3. [LaTex](https://github.com/pvpswaghd/code-sharing/tree/main/programs/latex)
+3. [LaTeX](https://github.com/pvpswaghd/code-sharing/tree/main/programs/latex)
 4. [Bash](https://github.com/pvpswaghd/code-sharing/tree/main/programs/shell)
 5. [Swift](https://github.com/pvpswaghd/code-sharing/tree/main/programs/swift)
 
